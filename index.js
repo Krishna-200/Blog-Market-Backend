@@ -25,7 +25,12 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({
+    origin: "https://sage-biscotti-f406fc.netlify.app",
+    credentials: true,
+  })
+);
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/posts", postsRoute);
